@@ -27,13 +27,19 @@ This guide provides instructions for a quick way of running granite 3 models on 
 10. configure RHOAI accelerator profile <br/>
     https://github.com/redhat-na-ssa/hobbyist-guide-to-rhoai/blob/main/docs/08-configure-rhoai.md <br/>
 
-11. Use the below yaml as a reference to create ServingRuntime and InferenceService
-    https://github.com/rh-aiservices-bu/models-aas/blob/main/deployment/model_serving/granite-code-vllm-raw.yaml
+11. Create ServingRuntime and InferenceService on RHOAI
+    https://github.com/rh-aiservices-bu/models-aas/blob/main/deployment/model_serving/granite-code-vllm-raw.yaml has some examples <br/>
+    <br/> [Sample granite 3 vllm file ](sample-granite3-vllm.yml)
 
-12. Test the granite model using curl command
+13. Test the granite model using curl command
+
+    <img width="987" alt="image" src="images/granite3-rhoai.png">
+
     ```
-    curl -k localhost:8080/v1/completions  -H "Content-Type: application/json"  -d '{"model": "granite-3-instruct", "prompt": "Describe Paris in 100 words or less.",  "max_tokens": 100,  "temperature": 0}'
-13. Troubleshooting <br/>
+    curl -k localhost:8080/v1/completions  -H "Content-Type: application/json"  -d '{"model": "granite-3-instruct", "prompt": "Describe Paris in 100 words or less.",  "max_tokens": 100,  "temperature": 0}' <br/>
+
+    
+14. Troubleshooting <br/>
     If you run into errors like the below, use a newer vllm image
     ```
     ValueError: Model architectures ['GraniteForCausalLM'] are not supported for now
