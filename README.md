@@ -15,6 +15,7 @@ This guide provides instructions for a quick way of running granite 3 models on 
 7. Install ODH-tech using quay.io/rh-aiservices-bu/odh-tec:latest  <br/>
     https://github.com/opendatahub-io-contrib/odh-tec/tree/main  <br/>
 8. Import  model ibm-granite/granite-3.0-2b-instruct using  https://github.com/rh-aiservices-bu/models-aas/tree/main?tab=readme-ov-file    <br/>
+   <img width="987" alt="image" src="images/upload-model.png">
 9. Start a g5.xlarge node <br/>
 
    configure taints/tolerations <br/>
