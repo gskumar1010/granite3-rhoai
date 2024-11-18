@@ -22,7 +22,7 @@ This guide provides instructions for a quick way of running granite 3 models on 
    https://github.com/redhat-na-ssa/hobbyist-guide-to-rhoai/blob/main/docs/05-configure-gpu-sharing-method.md#52-configure-taints-and-tolerations <br/>
 
    ```
-   oc adm taint node ip-10-0-5-51.us-east-2.compute.internal -l nvidia.com/gpu.machine nvidia.com/gpu=:NoSchedule --overwrite
+   oc adm taint node ip-10-0-5-51.us-east-2.compute.internal nvidia.com/gpu=:NoSchedule --overwrite
    oc patch clusterpolicy gpu-cluster-policy --type=merge --patch '{"spec":{"daemonsets":{"tolerations":[{"effect":"NoSchedule","operator":"Exists","key":"nvidia.com/gpu"}]}}}'
 
 10. configure RHOAI accelerator profile <br/>
